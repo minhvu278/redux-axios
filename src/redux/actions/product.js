@@ -7,9 +7,15 @@ export const setProducts = (products) => {
     }
 }
 
-export const selectedProducts = (products) => {
+export const selectedProducts = (product) => {
     return {
         type: ActionTypes.SELECTED_PRODUCT,
-        payload: products
+        payload: product
+    }
+}
+
+export const removeSelectedProducts = () => {
+    return {
+        type: ActionTypes.REMOVE_SELECTED_PRODUCT,
     }
 }
