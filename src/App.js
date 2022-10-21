@@ -1,12 +1,21 @@
 import './App.css';
 import Header from "./containers/Header";
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import ProductListing from "./containers/ProductListing";
+import ProductDetail from "./containers/ProductDetail";
 
 function App() {
   return (
-    <div className="App">
-      <h1>Bae</h1>
-        <Header />
-    </div>
+      <Router>
+          <Header />
+          <div className="App">
+              <Routes>
+                  <Route exact path="/" element={<ProductListing />}/>
+                  <Route exact path="/product/:productId" element={<ProductDetail />}/>
+                  <Route>Not Found</Route>
+              </Routes>
+          </div>
+      </Router>
   );
 }
 
